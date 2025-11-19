@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(9, 29, 57);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: col;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    background: rgb(43, 100, 150);
+    padding: 8px;
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+
+      .item {
+        color: white;
+        background: rgb(87, 174, 166);
+        line-height: 2em;
+        padding: 8px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    background: rgb(43, 100, 150);
+    padding: 8px;
+  }
+}
