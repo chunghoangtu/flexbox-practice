@@ -1,0 +1,154 @@
+body {
+  background-color: rgb(9, 29, 57);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  gap: 5px;
+  height: 100vh;
+
+  .container1 {
+    display: flex;
+    gap: 10px;
+
+    .item {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      /* flex: 1; /* grow=1, shrink=1, basis=0 */
+      flex: 1 1 0; /* grow=1, shrink=1, basis=0 */
+      text-align: center;
+      border-radius: 6px;
+    }
+  }
+
+  .container2 {
+    display: flex;
+    gap: 10px;
+
+    .item {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 6px;
+
+      &:nth-child(1) {
+        flex: 1;
+      }
+      &:nth-child(2) {
+        flex: 3;
+      } /* rộng gấp đôi */
+      &:nth-child(3) {
+        flex: 1;
+      }
+    }
+  }
+
+  .container3 {
+    display: flex;
+    gap: 10px;
+
+    .sidebar {
+      flex: 0 0 200px; /* grow=0, shrink=0, basis=200px → cố định */
+      background: #11b957;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .content {
+      flex: 3; /* chiếm toàn bộ phần còn lại */
+      padding: 20px;
+      background: #09999e;
+      color: white;
+      border-radius: 6px;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .image {
+      color: white;
+      background: #29099e;
+      flex: 1 1 200px; /* mỗi hình rộng tối thiểu 200px */
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  }
+
+  .ex1-container {
+    display: flex;
+    gap: 10px;
+    height: 100px;
+
+    .col {
+      flex: 1;
+      background-color: #09999e;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .ex2-container {
+    display: flex;
+    gap: 10px;
+    height: 100px;
+
+    .sidebar {
+      flex: 0 0 250px;
+      color: #fff;
+      background-color: #11b957;
+      text-align: center;
+    }
+
+    .content {
+      background-color: #09999e;
+      color: #fff;
+      text-align: center;
+      flex: 1;
+    }
+  }
+
+  .ex3-container {
+    display: flex;
+    gap: 10px;
+    height: 100px;
+
+    .col {
+      flex: 1;
+      background-color: #09999e;
+      color: #fff;
+      text-align: center;
+
+      &:nth-child(1) {
+        flex: 1;
+      }
+      &:nth-child(2) {
+        flex: 2;
+      } /* rộng gấp đôi */
+      &:nth-child(3) {
+        flex: 1;
+      }
+    }
+  }
+
+  .ex4-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .image {
+      color: white;
+      background: #29099e;
+      flex: 1 1 200px; /* mỗi hình rộng tối thiểu 200px */
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  }
+}
