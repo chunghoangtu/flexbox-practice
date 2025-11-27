@@ -1,0 +1,257 @@
+body {
+  background-color: rgb(9, 29, 57);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  gap: 5px;
+  height: 100vh;
+
+  .container1 {
+    display: flex;
+    gap: 10px;
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+
+      &.b {
+        order: 3;
+      } /* B đi ra cuối cùng */
+      &.c {
+        order: -1;
+      } /* C nhảy lên đầu */
+    }
+  }
+
+  .container2 {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+
+    .box {
+      width: 80px;
+      height: 80px;
+      background: #28a745;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+
+      &.top {
+        align-self: flex-start;
+      }
+      &.mid {
+        align-self: center;
+      }
+      &.bot {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .container3 {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+
+    .profile {
+      display: flex;
+      flex-direction: column; /* mobile */
+      gap: 10px;
+      /* background: #007bff; */
+      color: white;
+
+      * {
+        min-width: 50px;
+        padding: 5px;
+      }
+
+      .avatar {
+        background: #91bd40;
+        width: 50px;
+        aspect-ratio: 1;
+      }
+
+      .name {
+        background: #2f80a0;
+      }
+
+      .btn {
+        background: #2f31b1;
+      }
+      /* Desktop */
+      @media (min-width: 768px) {
+        flex-direction: row; /* ảnh + text + nút nằm ngang */
+
+        .btn {
+          order: 2; /* đưa nút xuống cuối */
+        }
+
+        .name {
+          order: 1; /* name ở giữa */
+        }
+
+        .avatar {
+          order: 0; /* avatar bên trái */
+        }
+      }
+    }
+  }
+
+  .ex1-container {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+
+    > * {
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+
+    &:hover {
+      .about {
+        order: -1;
+      }
+    }
+  }
+
+  .ex2-container {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+    flex-direction: column;
+
+    > * {
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+
+    @media (width >= 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  .ex3-container {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    justify-content: space-around;
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+
+    > * {
+      width: 80px;
+      aspect-ratio: 1;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+
+    .item1 {
+      align-self: flex-start;
+    }
+    .item2 {
+      align-self: center;
+    }
+    .item3 {
+      align-self: flex-end;
+    }
+    .item4 {
+      align-self: center;
+      width: 100px;
+    }
+  }
+
+  .ex4-container {
+    display: flex;
+    align-items: center; /* mặc định tất cả ở giữa */
+    height: 250px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    gap: 10px;
+    padding: 10px;
+
+    > * {
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      font-family: sans-serif;
+    }
+
+    .sidebar {
+      flex: 0 0 200px;
+    }
+    .content {
+      flex: 1;
+    }
+
+    @media (width < 768px) {
+      flex-direction: column;
+
+      .sidebar {
+        flex: 1;
+        order: 2;
+      }
+    }
+  }
+}
