@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./day6.css" />
+  </head>
+
+  <body>
+    <!-- <div class="container1">
+      <div class="product-card">
+        <div class="product-image"></div>
+        <div class="product-body">
+          <div class="product-title">Magic Wand Pro</div>
+          <div class="product-desc">
+            Chiếc đũa phép mạnh mẽ cho mọi phù thủy frontend
+          </div>
+          <div class="product-footer">
+            <span class="price">149</span>
+            <button class="btn-but">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container2">
+      <header class="navbar">
+        <div class="logo">FlexboxUI</div>
+        <div class="nav-right">
+          <nav class="nav-links">
+            <a href="">Home</a>
+            <a href="">Docs</a>
+            <a href="">Blog</a>
+            <a href="">About</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="btn">Login</button>
+            <button class="btn btn-primary">Sign Up</button>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="container3">
+      <div class="list-item">
+        <div class="icon">A</div>
+        <div class="content">
+          <div class="title">Learn Flexbox Nested Layout</div>
+          <div class="desc">
+            Thực hành flex lồng flex với card, navbar, list item
+          </div>
+          <div class="meta">
+            <span> 3 mins read</span>
+            <span>Update 1 day ago</span>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="ex1-container">
+      <article class="blog-card">
+        <header class="blog-header">
+          <span class="category">Frontend</span>
+          <span class="time">3 mins read · 1 day ago</span>
+        </header>
+
+        <h2 class="blog-title">
+          Làm chủ Flexbox Nested Layout trong 1 buổi tối
+        </h2>
+        <p class="blog-desc">
+          Tìm hiểu cách lồng nhiều flex container để xây dựng UI thực tế: card,
+          navbar, dashboard và nhiều hơn nữa.
+        </p>
+
+        <footer class="blog-footer">
+          <div class="avatar">TC</div>
+          <div class="author-info">
+            <span class="author-name">Tú Chung</span>
+            <span class="meta">24 comments</span>
+          </div>
+        </footer>
+      </article>
+    </div>
+
+    <div class="ex2-container">
+      <section class="pricing-table">
+        <div class="plan-card">
+          <div class="plan-header">
+            <div class="plan-name">Basic</div>
+            <div class="plan-price">$9</div>
+            <div class="plan-cycle">per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>1 project</li>
+            <li>Basic support</li>
+            <li>Community access</li>
+          </ul>
+          <div class="plan-footer">
+            <button class="btn-choose">Choose plan</button>
+          </div>
+        </div>
+
+        <div class="plan-card pro">
+          <div class="plan-header">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$29</div>
+            <div class="plan-cycle">per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>10 projects</li>
+            <li>Priority support</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <div class="plan-footer">
+            <button class="btn-choose">Choose plan</button>
+          </div>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-header">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">$99</div>
+            <div class="plan-cycle">per month</div>
+          </div>
+          <ul class="plan-features">
+            <li>Unlimited projects</li>
+            <li>Dedicated support</li>
+            <li>Custom integration</li>
+          </ul>
+          <div class="plan-footer">
+            <button class="btn-choose">Contact sales</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="ex3-container">
+      <!-- Navbar -->
+      <header class="navbar">
+        <div class="nav-left">
+          <div class="nav-logo">FlexDash</div>
+          <nav class="nav-links">
+            <span>Overview</span>
+            <span>Reports</span>
+            <span>Settings</span>
+          </nav>
+        </div>
+        <div class="nav-right">Logged in as <strong>You</strong></div>
+      </header>
+
+      <!-- Main layout -->
+      <div class="main">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <div class="sidebar-title">Menu</div>
+            <div class="menu">
+              <div class="menu-item active">Dashboard</div>
+              <div class="menu-item">Analytics</div>
+              <div class="menu-item">Users</div>
+              <div class="menu-item">Settings</div>
+            </div>
+          </div>
+          <!-- Section 2: Recent Projects -->
+          <div class="sidebar-section">
+            <div class="sidebar-title">Recent Projects</div>
+            <div class="project-list">
+              <div class="project-item">Flexbox Playground</div>
+              <div class="project-item">React Dashboard</div>
+              <div class="project-item">Landing Page UI</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+          <div class="content-header">
+            <h1>Dashboard</h1>
+            <span>Today · 4 widgets</span>
+          </div>
+
+          <div class="card-grid">
+            <div class="stat-card">
+              <div class="stat-title">Total Users</div>
+              <div class="stat-value">1,248</div>
+              <div class="stat-footer">+32 since yesterday</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-title">Active Sessions</div>
+              <div class="stat-value">89</div>
+              <div class="stat-footer">Peak: 135</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-title">Conversion Rate</div>
+              <div class="stat-value">4.3%</div>
+              <div class="stat-footer">+0.7% this week</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-title">Error Logs</div>
+              <div class="stat-value">12</div>
+              <div class="stat-footer">Last issue: 2h ago</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

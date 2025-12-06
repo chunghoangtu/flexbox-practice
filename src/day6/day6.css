@@ -1,0 +1,586 @@
+body {
+  background-color: rgb(9, 29, 57);
+  font-size: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  .container1 {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    > * {
+      width: 80px;
+      aspect-ratio: 1;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      background: #007bff;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-card {
+      width: 260px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column; /* card chính là flex container dọc */
+
+      .product-image {
+        height: 160px;
+        background: linear-gradient(135deg, #007bff, #00c3ff);
+      }
+
+      .product-body {
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column; /* nội dung card xếp dọc */
+        gap: 6px;
+        .product-title {
+          font-size: 1rem;
+          font-weight: bold;
+          color: red;
+        }
+
+        .product-desc {
+          font-size: 0.85rem;
+          color: #555;
+        }
+
+        .product-footer {
+          margin-top: 8px;
+          display: flex; /* flex lồng flex ở đây */
+          justify-content: space-between;
+          align-items: center;
+
+          .price {
+            font-weight: bold;
+            color: #e67e22;
+          }
+
+          .btn-buy {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+  }
+
+  .container2 {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    > * {
+      /* width: 80px;
+      aspect-ratio: 1; */
+      padding: 10px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      background: #007bff;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between; /* container chính */
+      gap: 10px;
+      align-items: center;
+      padding: 10px 20px;
+      background: #121826;
+      color: white;
+
+      .logo {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .nav-right {
+        display: flex; /* flex lồng: chứa 2 nhóm */
+        align-items: center;
+        gap: 20px;
+
+        .nav-links {
+          display: flex; /* flex tiếp: nhóm link */
+          gap: 12px;
+          font-size: 0.95rem;
+        }
+
+        .nav-actions {
+          display: flex; /* flex nữa: nhóm nút */
+          gap: 8px;
+
+          .btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: 1px solid #555;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+          }
+
+          .btn-primary {
+            background: #007bff;
+            border-color: #007bff;
+          }
+        }
+      }
+    }
+  }
+
+  .container3 {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    > * {
+      /* width: 80px;
+      aspect-ratio: 1; */
+      padding: 10px;
+      border-radius: 6px;
+      font-family: sans-serif;
+      background: #007bff;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .list-item {
+      display: flex; /* icon trái - content phải */
+      gap: 12px;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      max-width: 500px;
+      margin-bottom: 10px;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #007bff;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+
+        .title {
+          font-size: 0.95rem;
+          font-weight: bold;
+          color: #00c3ff;
+        }
+
+        .desc {
+          font-size: 0.85rem;
+          color: #555;
+        }
+
+        .meta {
+          display: flex; /* nested flex */
+          justify-content: space-between;
+          font-size: 0.8rem;
+          color: #888;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+  .ex1-container {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    .blog-card {
+      max-width: 360px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      padding: 16px;
+      display: flex;
+      flex-direction: column; /* card là flex dọc */
+      gap: 10px;
+
+      /* Header: category trái, time phải */
+      .blog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #777;
+
+        .category {
+          padding: 3px 8px;
+          border-radius: 999px;
+          background: #e3f2fd;
+          color: #1565c0;
+          font-weight: 600;
+        }
+
+        .time {
+          font-size: 0.75rem;
+        }
+      }
+
+      .blog-title {
+        font-size: 1.05rem;
+        font-weight: bold;
+      }
+
+      .blog-desc {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Footer: avatar trái, info phải */
+      .blog-footer {
+        display: flex; /* flex ngang */
+        align-items: center;
+        gap: 10px;
+        margin-top: 4px;
+
+        .avatar {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: #90caf9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: #0d47a1;
+        }
+
+        .author-info {
+          display: flex; /* flex lồng flex */
+          flex-direction: column;
+          font-size: 0.8rem;
+          color: #555;
+
+          .author-name {
+            font-weight: 600;
+          }
+
+          .meta {
+            font-size: 0.75rem;
+            color: #888;
+          }
+        }
+      }
+    }
+  }
+
+  .ex2-container {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    .pricing-table {
+      display: flex; /* 3 cột ngang */
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap; /* hẹp thì xuống dòng */
+
+      .plan-card {
+        flex: 1 1 220px; /* mỗi plan min ~220px */
+        max-width: 260px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column; /* trong card: dọc */
+        align-items: stretch;
+        gap: 10px;
+
+        .plan-header {
+          text-align: center;
+
+          .plan-name {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 4px;
+          }
+
+          .plan-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #007bff;
+          }
+
+          .plan-cycle {
+            font-size: 0.8rem;
+            color: #777;
+          }
+        }
+
+        .plan-features {
+          list-style: none;
+          padding: 0;
+          margin: 10px 0;
+          font-size: 0.85rem;
+          color: #555;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+
+          li::before {
+            content: "✔ ";
+            color: #28a745;
+            margin-right: 2px;
+          }
+        }
+
+        .plan-footer {
+          margin-top: auto; /* đẩy footer xuống đáy card */
+          display: flex;
+          justify-content: center;
+
+          .btn-choose {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+          }
+        }
+
+        &.pro {
+          border: 2px solid #007bff;
+          transform: translateY(-4px);
+        }
+      }
+    }
+  }
+
+  .ex3-container {
+    min-height: 200px;
+    background: transparent;
+    border: 5px solid #28a745;
+    border-radius: 6px;
+    padding: 10px;
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #111827;
+      color: white;
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .nav-logo {
+          font-weight: bold;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 12px;
+          font-size: 0.9rem;
+          opacity: 0.9;
+        }
+      }
+
+      .nav-right {
+        font-size: 0.85rem;
+        opacity: 0.9;
+      }
+    }
+
+    /* Layout dưới: sidebar + content */
+    .main {
+      display: flex;
+      min-height: calc(100vh - 50px);
+
+      .sidebar {
+        flex: 0 0 220px;
+        background: #1f2933;
+        color: #e5e7eb;
+        padding: 16px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        .sidebar-section {
+          /* mỗi khối (Menu, Projects, ...) */
+
+          .sidebar-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+            margin-bottom: 4px;
+          }
+
+          .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.9rem;
+
+            .menu-item {
+              padding: 6px 8px;
+              border-radius: 6px;
+              cursor: pointer;
+
+              &.active {
+                background: #111827;
+              }
+            }
+          }
+
+          .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.85rem;
+
+            .project-item {
+              padding: 4px 6px;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+
+            &:hover {
+              background: #111827;
+            }
+          }
+        }
+      }
+
+      /* Content area */
+      .content {
+        flex: 1;
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .content-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          h1 {
+            font-size: 1.1rem;
+            margin: 0;
+          }
+
+          span {
+            font-size: 0.85rem;
+            color: #6b7280;
+          }
+        }
+
+        .card-grid {
+          display: flex;
+          flex-wrap: wrap; /* nhiều card, tự wrap */
+          gap: 12px;
+        }
+
+        .stat-card {
+          flex: 1 1 220px; /* min ~220px, còn lại giãn */
+          background: white;
+          border-radius: 10px;
+          padding: 14px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          .stat-title {
+            font-size: 0.8rem;
+            color: #6b7280;
+          }
+
+          .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+          }
+
+          .stat-footer {
+            margin-top: auto;
+            font-size: 0.75rem;
+            color: #6b7280;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        flex: 0 0 auto;
+      }
+      
+      .main {
+        flex-direction: column;
+      }
+    }
+  }
+}
