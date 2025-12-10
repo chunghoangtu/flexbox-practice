@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Khung tổng thể */
+.page-test {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Header -> Main -> Footer */
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #111827;
+    color: white;
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.1.rem;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+
+      a {
+        color: #e5e7eb;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        &:hover {
+          color: #60a5fa;
+        }
+      }
+    }
+  }
+
+  /* Main: Sidebar + Content */
+  .main {
+    display: flex;
+    flex: 1; /* cho main giãn ra, đẩy footer xuống đáy */
+
+    .sidebar {
+      flex: 0 0 220px; /* sidebar cố định 220px */
+      background: #1f2933;
+      color: #e5e7eb;
+      padding: 16px 14px;
+
+      h3 {
+        margin-top: 0;
+        font-size: 0.95rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        font-size: 0.9rem;
+
+        li {
+          padding: 4px 0;
+        }
+      }
+    }
+
+    .content {
+      flex: 1; /* chiếm phần còn lại */
+      padding: 16px 18px;
+
+      .post {
+        background: white;
+        border-radius: 10px;
+        padding: 14px;
+        margin-bottom: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+        h2 {
+          margin: 0 0 8px;
+          font-size: 1.05rem;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.9rem;
+          color: #4b5563;
+        }
+      }
+    }
+  }
+
+  /* Footer */
+  .footer {
+    padding: 10px 20px;
+    background: #111827;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      .nav {
+        gap: 8px;
+        font-size: 0.85rem;
+      }
+    }
+
+    .main {
+      flex-direction: column; /* Sidebar và Content xếp dọc */
+
+      .sidebar {
+        flex: 0 0 auto; /* bỏ fixed width, cho nó auto theo content */
+        order: 2; /* cho nó xuống dưới nếu muốn */
+        /* order: 1; /* hoặc giữ nguyên ở trên nếu muốn */
+      }
+
+      .content {
+        order: 1; /* content lên trên */
+      }
+    }
+  }
+}
+
+.ex-container {
+  /* ========== BÀI 1: LAYOUT CƠ BẢN ========== */
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Header -> Main -> Footer */
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: #111827;
+      color: #ffffff;
+
+      .logo {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .nav {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+
+        a {
+          color: #e5e7eb;
+          text-decoration: none;
+
+          &:hover {
+            color: #60a5fa;
+          }
+        }
+      }
+    }
+
+    /* Main: Sidebar + Content */
+    .main {
+      display: flex;
+      flex: 1; /* giãn ra để footer dính đáy */
+
+      /* ========== Sidebar (BÀI 2 thêm Popular posts) ========== */
+
+      .sidebar {
+        flex: 0 0 240px; /* sidebar cố định 240px */
+        display: flex;
+        flex-direction: column;
+        gap: 18px; /* khoảng cách giữa các section */
+        background: #1f2933;
+        color: #e5e7eb;
+        padding: 16px 14px;
+
+        .sidebar-section {
+          /* mỗi block trong sidebar (Menu, Popular, v.v.) */
+
+          /* Title */
+          .sidebar-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+            margin-bottom: 6px;
+          }
+
+          /* Menu */
+          .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.9rem;
+
+            .menu-item {
+              padding: 6px 8px;
+              border-radius: 6px;
+              cursor: pointer;
+
+              &.active {
+                background: #111827;
+              }
+            }
+          }
+
+          /* Popular posts */
+          .popular-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.85rem;
+
+            /* Popular item */
+            .popular-item {
+              padding: 6px 8px;
+              border-radius: 6px;
+              background: #111827;
+              cursor: pointer;
+
+              .popular-item-title {
+                display: block;
+                margin-bottom: 2px;
+              }
+
+              .popular-item-date {
+                font-size: 0.75rem;
+                color: #9ca3af;
+              }
+            }
+          }
+        }
+      }
+
+      /* ========== Content ========== */
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1; /* chiếm phần còn lại */
+        padding: 16px 18px;
+
+        .content-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 8px;
+
+          h1 {
+            margin: 0;
+            font-size: 1.2rem;
+          }
+
+          span {
+            font-size: 0.85rem;
+            color: #6b7280;
+          }
+        }
+
+        /* ========== BÀI 3: Featured posts (hàng card dùng Flexbox) ========== */
+
+        .featured-list {
+          display: flex;
+          flex-wrap: wrap; /* cho phép tự xuống dòng */
+          gap: 10px;
+
+          .featured-card {
+            flex: 1 1 220px; /* min ~220px, còn lại tự giãn */
+            background: white;
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            .featured-tag {
+              font-size: 0.7rem;
+              text-transform: uppercase;
+              letter-spacing: 0.08em;
+              color: #2563eb;
+            }
+
+            .featured-title {
+              font-size: 0.95rem;
+              font-weight: 600;
+            }
+
+            .featured-meta {
+              font-size: 0.75rem;
+              color: #6b7280;
+            }
+          }
+        }
+
+        /* Danh sách post chính */
+
+        .post {
+          background: white;
+          border-radius: 10px;
+          padding: 14px;
+          margin-bottom: 10px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+          h2 {
+            margin: 0 0 6px;
+            font-size: 1.05rem;
+          }
+
+          .post-meta {
+            font-size: 0.8rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+          }
+
+          p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #4b5563;
+          }
+        }
+      }
+    }
+
+    /* Footer */
+    .footer {
+      padding: 10px 20px;
+      background: #111827;
+      color: #9ca3af;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    /* ========== BÀI 4: Responsive cải thiện cho mobile ========== */
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        .nav {
+          flex-wrap: wrap;
+          gap: 10px;
+          font-size: 0.85rem;
+        }
+      }
+
+      .main {
+        flex-direction: column; /* Sidebar & Content xếp dọc */
+
+        .sidebar {
+          order: 2; /* Sidebar xuống dưới */
+          flex: 0 0 auto;
+        }
+
+        .content {
+          order: 1; /* Content lên trên */
+        }
+      }
+    }
+  }
+}
