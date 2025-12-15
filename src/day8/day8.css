@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  font-family: sans-serif;
+  background-color: rgb(9, 29, 57);
+  color: white;
+
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container {
+  min-height: 200px;
+  background: transparent;
+  border: 5px solid #28a745;
+  border-radius: 6px;
+  padding: 10px;
+
+  &.pattern-center-box {
+    display: flex;
+    justify-content: center; /* ngang */
+    align-items: center; /* dọc */
+    height: 300px;
+
+    * {
+      padding: 16px;
+      border: 2px solid rgb(63, 158, 198);
+    }
+  }
+
+  &.pattern-columns {
+    display: flex;
+    gap: 10px;
+
+    .col {
+      flex: 1;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      /* Chiều cao sẽ tự kéo theo item cao nhất trong hàng */
+    }
+  }
+
+  &.pattern-sticky-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* flex: 1; */
+
+    * {
+      border: 2px solid rgb(63, 158, 198);
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+
+      > * {
+        flex: 1; /* cả 3 chiếm đều, nên center đúng giữa */
+        display: flex;
+        align-items: center;
+      }
+
+      .header-left {
+        justify-content: flex-start;
+      }
+
+      .header-center {
+        justify-content: center; /* menu đúng giữa */
+        flex: 4; /* menu chiểm diện tích nhiều hơn */
+      }
+
+      .header-right {
+        justify-content: flex-end;
+      }
+    }
+
+    .main {
+      flex: 1; /* cho main giãn, đẩy footer xuống đáy */
+    }
+  }
+
+  &.pattern-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .left-actions {
+      display: flex;
+      gap: 8px;
+      margin-right: auto; /* đẩy phần còn lại sang bên phải */
+    }
+
+    .primary {
+      /* style nút chính */
+    }
+  }
+
+  &.pattern-media {
+    display: flex;
+    gap: 10px;
+
+    .media-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #3b82f6;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .media-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &.when-grid-flexbox {
+    flex: 1;
+    font-size: 1rem;
+  }
+
+  &.small-practices {
+    display: flex;
+    gap: 8px; /* Dùng gap thay cho margin */
+
+    > * {
+      padding: 16px;
+      border: 2px solid rgb(63, 158, 198);
+    }
+
+    .item {
+      /* flex basis ưu tiên cao hơn width */
+      width: 200px;
+      flex-basis: 100px; /* sẽ apply flex-basis 100px thay vì width 200px */
+    }
+
+    .sidebar {
+      /* shrink default là 1, đễ ép vỡ UI đối với item nhỏ như side menu, nên set về 0 */
+
+      /* flex-shrink: 0; */
+      flex: 0 0 240px; /* hoặc defind short hand rõ  ràng */
+    }
+
+    .header {
+      display: flex;
+      flex: 1;
+      gap: 8px;
+
+       /* có thể thay bằng gap + margin-left: auto */
+      /* justify-content: space-between; */
+
+      > * {
+        padding: 16px;
+        border: 2px solid rgb(127, 195, 44);
+      }
+
+      .left {
+       /* có thể thay cho justify-content: space-between */
+        /* margin-right: auto; */
+
+        /* hoặc float hết sang phải */
+        margin-left: auto;
+      }
+    }
+  }
+}

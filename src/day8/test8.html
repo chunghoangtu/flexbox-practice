@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./day8.css" />
+  </head>
+
+  <body>
+    <!-- 1. Pattern: Căn giữa mọi thứ -->
+    <div class="container pattern-center-box">
+      <span>I'm centered</span>
+    </div>
+
+    <!-- Pattern: Equal-height columns (các cột cao bằng nhau) -->
+    <div class="container pattern-columns">
+      <div class="col">Lorem ipsum<br />ngắn</div>
+      <div class="col">
+        Lorem ipsum dolor sit amet, nhiều chữ hơn nên sẽ cao hơn nếu không dùng
+        flex.
+      </div>
+      <div class="col">Col 3</div>
+    </div>
+
+    <!-- Pattern: Sticky Footer -->
+    <div class="container pattern-sticky-footer">
+      <!-- Pattern: “Space between” + “center” trong cùng 1 header -->
+      <header class="header">
+        <div class="header-left">Logo</div>
+        <div class="header-center">Menu</div>
+        <div class="header-right">Login</div>
+      </header>
+      <main class="main">main</main>
+      <footer class="footer">footer</footer>
+    </div>
+
+    <!-- Pattern: “Button bar” với 1 nút đẩy sang phải -->
+    <div class="container pattern-toolbar">
+      <div class="left-actions">
+        <button>Filter</button>
+        <button>Sort</button>
+      </div>
+      <button class="primary">Create</button>
+    </div>
+
+    <!-- Pattern: “Media object” – Avatar trái, content phải -->
+    <div class="container pattern-media">
+      <div class="media-avatar">A</div>
+      <div class="media-body">
+        <div class="media-title">User A</div>
+        <div class="media-text">Comment content...</div>
+      </div>
+    </div>
+
+    <!-- Khi nào nên dùng Flexbox vs Grid? -->
+    <div class="container when-grid-flexbox">
+      <pre>
+      Không phải chỗ nào layout cũng “flex all the things” 😄
+
+      ✅ Dùng Flexbox khi:
+
+      Layout 1 chiều là chính:
+
+      Hàng ngang (row) hoặc cột dọc (column).
+
+      Cần căn chỉnh / phân bổ items theo content:
+
+      Navbar, button group, list items, card row, header/footer, thanh tool.
+
+      Cần wrap đơn giản:
+
+      Tag cloud, gallery đơn giản, group button.
+
+      ✅ Dùng Grid khi:
+
+      Layout 2 chiều (cả hàng lẫn cột đều quan trọng):
+
+      Page layout phức tạp, dashboard nhiều vùng.
+
+      Cần line-based layout (điều khiển item bám theo line: grid-row, grid-column).
+
+      Cần tính toán cột/hàng rõ ràng (12-column layout, masonry-like…).
+
+      Nói ngắn gọn:
+
+      Flex: align & distribute trong 1 hướng.
+
+      Grid: layout tổng thể 2D.
+      </pre>
+    </div>
+
+    <!-- Small Practices -->
+     <div class="container small-practices">
+      <div class="item">item</div>
+      <div class="sidebar">sidebar</div>
+      <header class="header">
+        <div class="left">left</div>
+        <div class="right">right</div>
+      </header>
+     </div>
+  </body>
+</html>

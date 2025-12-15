@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  font-family: sans-serif;
+  background-color: rgb(9, 29, 57);
+  color: white;
+
+  /* height: 100vh; */
+  /* display: flex;
+  flex-direction: column;
+  gap: 8px; */
+
+  > * {
+    padding: 16px;
+    border: 2px solid rgb(127, 195, 44);
+  }
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+
+  .card {
+    flex: 1 0 0px;
+    display: flex;
+    flex-direction: column; /* để dùng margin-top:auto */
+
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid rgb(63, 158, 198);
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #8bb859;
+    }
+
+    .card-footer {
+      margin-top: auto; /* đẩy footer xuống đáy card */
+      padding-top: 10px;
+
+      .btn {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: none;
+        background: #2563eb;
+        color: white;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
