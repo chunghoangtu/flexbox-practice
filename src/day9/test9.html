@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./day9.css" />
+  </head>
+
+  <body>
+    <div class="ex1-container">
+      <div class="layout">
+        <aside class="sidebar">
+          <h3 style="margin-top: 0">Sidebar</h3>
+          <p style="margin: 0; font-size: 0.9rem">Fixed 240px (không co)</p>
+        </aside>
+
+        <main class="content">
+          <h2 class="title">Content</h2>
+
+          <span class="long-text">
+            https://example.com/super/long/url/that/never/ends/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          </span>
+
+          <div class="note">
+            Fix chính: <code>sidebar: flex: 0 0 240px</code> +
+            <code>content: min-width: 0</code> + ellipsis.
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="ex2-container">
+      <h3>Case A: align-items: center (căn item trong từng dòng)</h3>
+      <div
+        class="container"
+        style="align-items: center; align-content: stretch"
+      >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
+      <div class="hint">
+        align-items ảnh hưởng vị trí item trong mỗi line (cross-axis).
+      </div>
+
+      <h3>
+        Case B: align-content: center (căn cả “khối các dòng” trong container)
+      </h3>
+      <div
+        class="container"
+        style="align-items: stretch; align-content: center"
+      >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
+      <div class="hint">
+        align-content chỉ có tác dụng khi wrap + có nhiều dòng.
+      </div>
+
+      <h3>
+        Case C: align-content: space-between (dãn các dòng theo chiều dọc)
+      </h3>
+      <div
+        class="container"
+        style="align-items: stretch; align-content: space-between"
+      >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+      </div>
+      <div class="hint">
+        space-between làm dòng đầu sát trên, dòng cuối sát dưới, dòng giữa chia
+        đều.
+      </div>
+    </div>
+
+    <div class="ex3-container">
+      <div class="list">
+        <article class="card">
+          <div class="title">Card 1 - Title ngắn</div>
+          <p class="desc">Mô tả ngắn.</p>
+          <div class="footer"><button class="btn">Read more</button></div>
+        </article>
+
+        <article class="card">
+          <div class="title">
+            Card 2 - Title siêu dài siêu dài siêu dài siêu dài siêu dài siêu dài
+            siêu dài siêu dài
+          </div>
+          <p class="desc">
+            Mô tả dài hơn để card cao hơn. Nhưng các card vẫn lên hàng và nút
+            luôn ở đáy.
+          </p>
+          <div class="footer"><button class="btn">Read more</button></div>
+        </article>
+
+        <article class="card">
+          <div class="title">Card 3</div>
+          <p class="desc">Nội dung vừa phải.</p>
+          <div class="footer"><button class="btn">Read more</button></div>
+        </article>
+
+        <!-- Card cuối cùng để bạn thấy trường hợp "1 card ở hàng cuối" -->
+        <article class="card">
+          <div class="title">Card 4 - thường là card cuối hàng</div>
+          <p class="desc">
+            Card này giúp bạn test tình huống hàng cuối chỉ có 1 item (Flexbox
+            sẽ cho nó giãn).
+          </p>
+          <div class="footer"><button class="btn">Read more</button></div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

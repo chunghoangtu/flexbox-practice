@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 8px;
+  font-family: sans-serif;
+  background-color: rgb(9, 29, 57);
+  color: white;
+
+  /* height: 100vh; */
+  /* display: flex;
+  flex-direction: column;
+  gap: 8px; */
+}
+
+.ex1-container {
+  min-height: 200px;
+  background: transparent;
+  border: 5px solid #28a745;
+  border-radius: 6px;
+  padding: 10px;
+
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* gap: 8px; */
+
+  /* > * {
+    padding: 10px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    background: #007bff;
+    color: white;
+  } */
+
+  .layout {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: transparent;
+    max-width: 900px;
+
+    .sidebar {
+      flex: 0 0 240px; /* cố định 240px */
+      background: #1f2933;
+      color: #e5e7eb;
+      padding: 14px;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0; /* ✅ quan trọng: cho phép content co lại */
+      padding: 14px;
+      background: transparent;
+
+      .title {
+        margin: 0 0 10px;
+        font-size: 1.05rem;
+      }
+
+      .long-text {
+        display: block;
+        padding: 10px;
+        border-radius: 8px;
+        background: #3e64c4;
+
+        /* ✅ chống vỡ layout do text dài */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .note {
+        margin-top: 10px;
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+    }
+  }
+}
+
+.ex2-container {
+  min-height: 200px;
+  background: transparent;
+  border: 5px solid #28a745;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* ✅ bắt buộc để align-content có tác dụng */
+    gap: 10px;
+    height: 260px; /* ✅ phải có height để thấy align-content */
+
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    max-width: 520px;
+
+    .box {
+      flex: 0 0 120px;
+      height: 60px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 6px;
+    }
+  }
+}
+
+.ex3-container {
+  min-height: 200px;
+  background: transparent;
+  border: 5px solid #28a745;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 900px;
+  }
+
+  .card {
+    flex: 1 1 260px; /* responsive */
+    background: transparent;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 5px solid #22b0cc;
+
+    display: flex;
+    flex-direction: column; /* để dùng margin-top:auto */
+    min-width: 0; /* ✅ rất quan trọng để text không phá layout */
+  }
+
+  .title {
+    font-weight: 700;
+    margin-bottom: 6px;
+
+    /* ✅ chống title siêu dài */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    color: #7bc549;
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .footer {
+    margin-top: auto; /* ✅ nút xuống đáy */
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .btn {
+    padding: 7px 10px;
+    border-radius: 6px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+}
