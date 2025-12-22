@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 10 - Flexbox Mini Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="./day10.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header-left">
+          <div class="logo">FlexDash</div>
+        </div>
+
+        <div class="header-center">
+          <nav class="menu">
+            <a href="#">Overview</a>
+            <a href="#">Reports</a>
+            <a href="#">Users</a>
+            <a href="#">Settings</a>
+          </nav>
+        </div>
+
+        <div class="header-right">
+          <div class="user">
+            <div class="avatar">TC</div>
+            <span>You</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <div class="toolbar-left">Showing 1–12 of 134</div>
+
+        <div class="toolbar-search">
+          <input placeholder="Search posts..." />
+        </div>
+
+        <div class="toolbar-actions">
+          <button class="btn">Filter</button>
+          <button class="btn">Sort</button>
+          <button class="btn btn-primary">Create</button>
+        </div>
+      </div>
+
+      <main class="main">
+        <aside class="sidebar">
+          <div>
+            <div class="sidebar-title">Menu</div>
+            <ul class="menu-list">
+              <li class="menu-item active">Dashboard</li>
+              <li class="menu-item">Analytics</li>
+              <li class="menu-item">Content</li>
+              <li class="menu-item">Billing</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="sidebar-title">Shortcuts</div>
+            <ul class="menu-list">
+              <li class="menu-item">New Post</li>
+              <li class="menu-item">Drafts</li>
+              <li class="menu-item">Bookmarks</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="featured">
+            <article class="featured-card">
+              <div class="tag">Featured</div>
+              <div class="featured-title">
+                Flexbox Debug Checklist (min-width: 0, shrink, wrap...)
+              </div>
+              <div class="meta">5 mins read · CSS</div>
+            </article>
+            <article class="featured-card">
+              <div class="tag">Featured</div>
+              <div class="featured-title">
+                Sticky Footer Pattern & Layout Real-world
+              </div>
+              <div class="meta">6 mins read · UI</div>
+            </article>
+            <article class="featured-card">
+              <div class="tag">Featured</div>
+              <div class="featured-title">
+                Nested Flexbox for Cards, Navbars, Lists
+              </div>
+              <div class="meta">8 mins read · Layout</div>
+            </article>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h3>Card 1 - Short title</h3>
+              <p>Nội dung ngắn.</p>
+              <div class="card-footer">
+                <button class="btn">Preview</button>
+                <button class="btn btn-primary">Open</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>
+                Card 2 - Title rất dài rất dài rất dài rất dài để test ellipsis
+              </h3>
+              <p>
+                Nội dung dài hơn một chút để card cao hơn. Nút vẫn phải nằm đáy
+                nhờ margin-top: auto.
+              </p>
+              <div class="card-footer">
+                <button class="btn">Preview</button>
+                <button class="btn btn-primary">Open</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Card 3</h3>
+              <p>
+                Text dài test overflow:
+                https://example.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </p>
+              <div class="card-footer">
+                <button class="btn">Preview</button>
+                <button class="btn btn-primary">Open</button>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Card 4</h3>
+              <p>Thêm card để test wrap responsive.</p>
+              <div class="card-footer">
+                <button class="btn">Preview</button>
+                <button class="btn btn-primary">Open</button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        © 2025 FlexDash — Flexbox Day 10 Final Project
+      </footer>
+    </div>
+  </body>
+</html>
